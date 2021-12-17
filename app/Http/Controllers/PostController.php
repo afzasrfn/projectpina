@@ -54,9 +54,8 @@ class PostController extends Controller
 
         $post->user_id = $user_id;
         $post->tittle = $request->tittle;
-        $post->slug = $request->slug;
-        $post->excerpt = $request->excerpt;
-        $post->body = $request->body;
+        $post->content = $request->content;
+        $post->media = $request->media;
         $post->save();
         return redirect(route("post.index"));
         // dd($request->all());
@@ -68,11 +67,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($Slug)
+    public function show($content)
     {
         $data = [
-            'tittle'=>'List Blog',
-            'post'=> Post::where('Slug', $Slug)->first(),
+            'tittle'=>'List content',
+            'post'=> Post::where('content', $content)->first(),
         ];
         return view('post',$data);
     }
@@ -110,9 +109,8 @@ class PostController extends Controller
 
         $post->user_id = $user_id;
         $post->tittle = $request->tittle;
-        $post->slug = $request->slug;
-        $post->excerpt = $request->excerpt;
-        $post->body = $request->body;
+        $post->content = $request->content;
+        $post->media = $request->media;
         $post->update();
         return redirect(route("post.index"));
     }

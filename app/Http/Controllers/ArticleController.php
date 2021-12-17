@@ -52,7 +52,7 @@ class ArticleController extends Controller
     {
         $data = [
             'Tittle'=>'List Article',
-            'post'=> Post::where('Slug', $id)->first(),
+            'post'=> Post::where('content', $id)->first(),
         ];
 
         //dd($data);

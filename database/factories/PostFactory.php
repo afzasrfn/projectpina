@@ -16,9 +16,9 @@ class PostFactory extends Factory
         return [
             'tittle' => $this->faker->paragraph(1),
             'user_id' =>mt_rand(1,5),
-            'slug' =>$this->faker->slug(),
-            'excerpt' =>$this->faker->paragraph(1),
-            'body' =>$this->faker->paragraph(5),
+            'content' =>$this->faker->paragraph(5),
+            'media' =>$this->faker->mimeType(),
+
         ];
     }
 }
